@@ -16,7 +16,7 @@
                 </MenuItem>
             </Menu>
             <ToolBarTray Height="40" Background="LightCyan" DockPanel.Dock="Top">
-                <ToolBar Height="38" Width="600" Background="Aqua">
+                <ToolBar Height="38" Width="600" Background="Green">
                     <Label Content="筆刷色彩" VerticalContentAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
                     <xctk:ColorPicker x:Name="StrokeColorPicker" Width="100" Height="30" DisplayColorAndName="True" SelectedColorChanged="StrokeColorPicker_SelectedColorChanged"/>
                     <Label Content="填滿色彩" VerticalContentAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
@@ -24,7 +24,7 @@
                     <Slider x:Name="ThicknessSlider" Width="120" Minimum="1" Maximum="10" Value="1" IsSnapToTickEnabled="True" TickFrequency="1" VerticalAlignment="Center" Margin="30,0,0,0" ValueChanged="ThicknessSlider_ValueChanged"/>
                     <Label FontSize="14" FontWeight="Bold" Margin="30,0,0,0" Content="{Binding Value, ElementName=ThicknessSlider}" VerticalAlignment="Center"/>
                 </ToolBar>
-                <ToolBar Height="38" Width="300" Background="Bisque">
+                <ToolBar Height="38" Width="300" Background="Gray">
                     <RadioButton Width="38" Height="38" Tag="Line" Checked="ShapeButton_Checked">
                         <Image Source="/line.png" />
                     </RadioButton>
@@ -59,7 +59,7 @@
                     <Label x:Name="ColorLabel" Content="色彩" VerticalAlignment="Center" FontSize="14" Width="394"/>
                 </StatusBarItem>
             </StatusBar>
-            <Canvas x:Name="MyCanvas" Background="#FFF7F6E2" MouseEnter="MyCanvas_MouseEnter" MouseLeftButtonDown="MyCanvas_MouseLeftButtonDown" MouseUp="MyCanvas_MouseUp" MouseMove="MyCanvas_MouseMove" />
+            <Canvas x:Name="MyCanvas" Background="White" MouseEnter="MyCanvas_MouseEnter" MouseLeftButtonDown="MyCanvas_MouseLeftButtonDown" MouseUp="MyCanvas_MouseUp" MouseMove="MyCanvas_MouseMove" />
         </DockPanel>
 
     </Grid>
