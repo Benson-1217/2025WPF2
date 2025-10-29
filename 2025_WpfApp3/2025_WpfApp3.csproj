@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>_2025_WpfApp3</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="ellipse.png" />
+		<Resource Include="eraser.png" />
+		<Resource Include="line.png" />
+		<Resource Include="polyline.png" />
+		<Resource Include="rectangle.png" />
+		<Resource Include="trashcan.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="ellipse.png" />
+		<None Remove="eraser.png" />
+		<None Remove="line.png" />
+		<None Remove="polyline.png" />
+		<None Remove="rectangle.png" />
+		<None Remove="trashcan.png" />
+	</ItemGroup>
+
+
+</Project>

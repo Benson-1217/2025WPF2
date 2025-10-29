@@ -1,0 +1,66 @@
+﻿<Window x:Class="_2025_WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2025_WpfApp3" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="469" Width="897">
+    <Grid>
+
+        <DockPanel>
+            <Menu Height="30" DockPanel.Dock="Top">
+                <MenuItem Header="檔案" Height="30" VerticalAlignment="Center" FontSize="16">
+                    <MenuItem Header="開啟新畫布" VerticalAlignment="Center" FontSize="16" />
+                    <MenuItem Header="儲存畫布" VerticalAlignment="Center" FontSize="16" />
+                </MenuItem>
+            </Menu>
+            <ToolBarTray Height="40" Background="LightCyan" DockPanel.Dock="Top">
+                <ToolBar Height="38" Width="600" Background="Aqua">
+                    <Label Content="筆刷色彩" VerticalContentAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
+                    <xctk:ColorPicker x:Name="StrokeColorPicker" Width="100" Height="30" DisplayColorAndName="True" SelectedColorChanged="StrokeColorPicker_SelectedColorChanged"/>
+                    <Label Content="填滿色彩" VerticalContentAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
+                    <xctk:ColorPicker x:Name="FillColorPicker" Width="100" Height="30" DisplayColorAndName="True" SelectedColorChanged="FillColorPicker_SelectedColorChanged"/>
+                    <Slider x:Name="ThicknessSlider" Width="120" Minimum="1" Maximum="10" Value="1" IsSnapToTickEnabled="True" TickFrequency="1" VerticalAlignment="Center" Margin="30,0,0,0" ValueChanged="ThicknessSlider_ValueChanged"/>
+                    <Label FontSize="14" FontWeight="Bold" Margin="30,0,0,0" Content="{Binding Value, ElementName=ThicknessSlider}" VerticalAlignment="Center"/>
+                </ToolBar>
+                <ToolBar Height="38" Width="300" Background="Bisque">
+                    <RadioButton Width="38" Height="38" Tag="Line" Checked="ShapeButton_Checked">
+                        <Image Source="/line.png" />
+                    </RadioButton>
+                    <RadioButton Width="38" Height="38" Tag="Rectangle" Checked="ShapeButton_Checked">
+                        <Image Source="/rectangle.png" />
+                    </RadioButton>
+                    <RadioButton Width="38" Height="38" Tag="Ellipse" Checked="ShapeButton_Checked">
+                        <Image Source="/ellipse.png" />
+                    </RadioButton>
+                    <RadioButton Width="38" Height="38" Tag="Polyline" Checked="ShapeButton_Checked">
+                        <Image Source="/polyline.png" />
+                    </RadioButton>
+                    <Separator />
+                    <Button x:Name="EraserButton"  Width="38" Height="38" Tag="Eraser" Click="EraserButton_Click">
+                        <Image Width="32" Height="32" Source="/eraser.png"/>
+                    </Button>
+                    <Button x:Name="ClearButton"  Width="38" Height="38" Tag="Clear" Click="ClearButton_Click">
+                        <Image Width="32" Height="32" Source="/trashcan.png"/>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            <StatusBar Height="45" Background="LightGray" DockPanel.Dock="Bottom" Width="798">
+                <StatusBarItem Width="200">
+                    <Label x:Name="StatusLabel" Content="Ready" VerticalAlignment="Center" FontSize="14" Width="170"/>
+                </StatusBarItem>
+                <Separator/>
+                <StatusBarItem Width="400">
+                    <Label x:Name="ShapeLabel" Content="形狀" VerticalAlignment="Center" FontSize="14" Width="395"/>
+                </StatusBarItem>
+                <Separator/>
+                <StatusBarItem Width="400" HorizontalAlignment="Left">
+                    <Label x:Name="ColorLabel" Content="色彩" VerticalAlignment="Center" FontSize="14" Width="394"/>
+                </StatusBarItem>
+            </StatusBar>
+            <Canvas x:Name="MyCanvas" Background="#FFF7F6E2" MouseEnter="MyCanvas_MouseEnter" MouseLeftButtonDown="MyCanvas_MouseLeftButtonDown" MouseUp="MyCanvas_MouseUp" MouseMove="MyCanvas_MouseMove" />
+        </DockPanel>
+
+    </Grid>
+</Window>
